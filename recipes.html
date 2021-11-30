@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&family=Archivo+Narrow&family=Open+Sans&display=swap" rel="stylesheet">
+    <script src="navjava.js"></script>
     <title>Recipes</title>
   </head>
   <body>
@@ -22,6 +23,23 @@
     </script>
     <header class = "noParallax">
         <a class = "skip" href = "#main">Skip to Eliza's Recipes</a>
+        <!-- <select onchange="NavigateToSelection(this)" id="pagemenu">
+            <option selected="Selected" disabled="disabled">Menu</option>
+            <option value="About">About</option>
+            <option selected="Selected" value="Recipes">Recipes</option>
+            <option value="Favorites">Favorites</option>
+            <option value="Cookbooks">Cookbooks</option>
+            <option value="Form">Form</option>
+          </select>
+          <select onchange="ShowSelectedRecipeType(this)" id="pagemenu">
+            <option selected="Selected" disabled="disabled">Select Recipe Type</option>
+            <option value="Appetizer">Appetizer</option>
+            <option value="Breakfast">Breakfast</option>
+            <option value="Dessert">Dessert</option>
+            <option value="Main">Main Course</option>
+            <option value="Side">Side Dish</option>
+            <option value="Vegetarian">Vegetarian</option>
+          </select> -->
         <nav>
           <ul class="nav_links">
             <li class="nav_item" ><a href="aboutme.html">About</a></li>
@@ -31,12 +49,43 @@
             <li class="nav_item"><a href="form.html">Contact Me</a></li>
         </ul>
       </nav>
+      <div class="controls">
+        <button type="button" class="control" data-filter="all">All</button>
+        <button type="button" class="control" data-filter=".breakfast">Breakfast</button>
+        <button type="button" class="control" data-filter=".appetizer">Appetizers</button>
+        <button type="button" class="control" data-filter=".main">Main Courses</button>
+        <button type="button" class="control" data-filter=".vegetarian">Vegetarian Options</button>
+        <button type="button" class="control" data-filter=".side">Side Dishes</button>
+        <button type="button" class="control" data-filter=".dessert">Dessert</button>
+        <button type="button" class="control" data-filter="none">None</button>
+    </div>
+    <div class="container">
+        <div class="mix vegetarian"></div>
+        <div class="mix vegetarian"></div>
+        <div class="mix vegetarian"></div>
+        <div class="mix pink"></div>
+        <div class="mix green"></div>
+        <div class="mix blue"></div>
+        <div class="mix pink"></div>
+        <div class="mix blue"></div>
+
+        <div class="gap"></div>
+        <div class="gap"></div>
+        <div class="gap"></div>
+    </div>
+    <script src="navjava.js"></script>
+
+        <script>
+            var containerEl = document.querySelector('.container');
+
+            var mixer = mixitup(containerEl);
+        </script>
       <h1>Recipes</h1>
   </header>
   <main id = "main">
-    <p>Below you will find all of my favorite recipes I have made over the years!</p> 
+    <p class = "test">Below you will find all of my favorite recipes I have made over the years!</p> 
     <div class="flip-container">
-        <div class="flip-box">
+        <div class="flip-box mix vegetarian">
             <div class="flip-box-inner" id="d1">
                 <div class="flip-box-front">
                     <img src="images/french_onion.jpeg" alt="Photo of homemade French Onion and Apple Grilled Cheese" />
@@ -60,7 +109,7 @@
                 </div>
             </div>
         </div>
-        <div class="flip-box">
+        <div class="flip-box mix vegetarian">
             <div class="flip-box-inner" id="d3">
                 <div class="flip-box-front">
                     <img src="images/cauliflower.jpeg" alt="Photo of homemade Whole Roasted Cauliflower" />
@@ -72,7 +121,7 @@
                 </div>
             </div>
         </div>
-        <div class="flip-box">
+        <div class="flip-box mix dessert">
             <div class="flip-box-inner" id="d4">
                 <div class="flip-box-front">
                     <img src="images/earl_grey.jpeg" alt="Photo of homemade Earl Grey Yogurt Cake" />
@@ -84,7 +133,7 @@
                 </div>
             </div>
         </div>
-        <div class="flip-box">
+        <div class="flip-box mix dessert">
             <div class="flip-box-inner" id="d5">
                 <div class="flip-box-front">
                     <img src="images/cookies.jpeg" alt="Photo of homemade Teddy Bear Snickerdoodle Cookies" />
@@ -96,7 +145,7 @@
                 </div>
             </div>
         </div>
-        <div class="flip-box">
+        <div class="flip-box mix main">
             <div class="flip-box-inner" id="d6">
                 <div class="flip-box-front">
                     <img src="images/IMG_1442.jpeg" alt="Photo of homemade Everything Crusted Salmon" />
@@ -108,7 +157,7 @@
                 </div>
             </div>
         </div>
-        <div class="flip-box">
+        <div class="flip-box mix appetizer">
             <div class="flip-box-inner" id="d7">
                 <div class="flip-box-front">
                     <img src="images/IMG_1443.jpeg" alt="Photo of homemade Sesame Ginger Dumplings in Chili Oil" />
@@ -120,7 +169,7 @@
                 </div>
             </div>
         </div>
-        <div class="flip-box">
+        <div class="flip-box mix dessert">
             <div class="flip-box-inner" id="d8">
                 <div class="flip-box-front">
                     <img src="images/IMG_1444.jpeg" alt="Photo of homemade Pull-Apart Garlic Butter Bread Wreath" />
@@ -132,7 +181,7 @@
                 </div>
             </div>
         </div>
-        <div class="flip-box">
+        <div class="flip-box mix dessert">
             <div class="flip-box-inner" id="d9" >
                 <div class="flip-box-front">
                     <img src="images/IMG_1445.jpeg" alt="Photo of homemade Churros" />
@@ -144,7 +193,7 @@
                 </div>
             </div>
         </div>
-        <div class="flip-box">
+        <div class="flip-box mix appetizer">
             <div class="flip-box-inner" id="d10">
                 <div class="flip-box-front">
                     <img src="images/IMG_1446.jpeg" alt="Photo of homemade Spicy Tuna Crispy Rice Cakes" />
@@ -156,7 +205,7 @@
                 </div>
             </div>
         </div>
-        <div class="flip-box">
+        <div class="flip-box mix appetizer">
             <div class="flip-box-inner" id="d11">
                 <div class="flip-box-front">
                     <img src="images/IMG_1447.jpeg" alt="Photo of homemade Roasted Artichokes with Garlic Butter" />
@@ -168,7 +217,7 @@
                 </div>
             </div>
         </div>
-        <div class="flip-box">
+        <div class="flip-box mix side">
             <div class="flip-box-inner" id="d12">
                 <div class="flip-box-front">
                     <img src="images/IMG_1448.jpeg" alt="Photo of homemade Crispy Persian Rice (Tahdig) with Spiced Golden Chickpeas" />
@@ -180,7 +229,7 @@
                 </div>
             </div>
         </div>
-        <div class="flip-box">
+        <div class="flip-box mix side">
             <div class="flip-box-inner" id="d13">
                 <div class="flip-box-front">
                     <img src="images/IMG_1449.jpeg" alt="Photo of homemade Herbed Garlic Butter Naan" />
@@ -192,7 +241,7 @@
                 </div>
             </div>
         </div>
-        <div class="flip-box">
+        <div class="flip-box mix appetizer">
             <div class="flip-box-inner" id="d14">
                 <div class="flip-box-front">
                     <img src="images/IMG_1450.jpeg" alt="Photo of homemade Sweet-and-Spicy Mixed Nuts" />
@@ -204,7 +253,7 @@
                 </div>
             </div>
         </div>
-        <div class="flip-box">
+        <div class="flip-box mix main">
             <div class="flip-box-inner" id="d15">
                 <div class="flip-box-front">
                     <img src="images/IMG_1451.jpeg" alt="Photo of homemade Stuffed Shells" />
@@ -216,7 +265,7 @@
                 </div>
             </div>
         </div>
-        <div class="flip-box">
+        <div class="flip-box mix dessert">
             <div class="flip-box-inner" id="d16">
                 <div class="flip-box-front">
                     <img src="images/IMG_1452.jpeg" alt="Photo of homemade Chocolate-Cinnamon 'Babkallah'" />
@@ -228,7 +277,7 @@
                 </div>
             </div>
         </div>
-        <div class="flip-box">
+        <div class="flip-box mix main">
             <div class="flip-box-inner" id="d17">
                 <div class="flip-box-front">
                     <img src="images/IMG_1453.jpeg" alt="Photo of homemade Chipotle Quinoa Sweet Potato Tacos with Roasted Cranberry Pomegranate Salsa" />
@@ -241,7 +290,7 @@
             </div>
         </div>
         <div class="flip-box">
-            <div class="flip-box-inner" id="d18">
+            <div class="flip-box-inner mix breakfast" id="d18">
                 <div class="flip-box-front">
                     <img src="images/IMG_1454.jpeg" alt="Photo of homemade Herb-Whipped Goat Cheese with Harissa and Toast" />
                 </div>
@@ -252,7 +301,7 @@
                 </div>
             </div>
         </div>
-        <div class="flip-box">
+        <div class="flip-box mis main">
             <div class="flip-box-inner" id="d19">
                 <div class="flip-box-front">
                     <img src="images/IMG_1455.jpeg" alt="Photo of homemade Cedar Plank Salmon with Watermelon Feta Salsa" />
@@ -264,7 +313,7 @@
                 </div>
             </div>
         </div>
-        <div class="flip-box">
+        <div class="flip-box mix appetizer">
             <div class="flip-box-inner" id="d20">
                 <div class="flip-box-front">
                     <img src="images/IMG_1456.jpeg" alt="Photo of homemade Herby French Shallot Soup" />
@@ -276,7 +325,7 @@
                 </div>
             </div>
         </div>
-        <div class="flip-box">
+        <div class="flip-box mix main">
             <div class="flip-box-inner" id="d21">
                 <div class="flip-box-front">
                     <img src="images/IMG_1457.jpeg" alt="Photo of homemade Sweet Potato Lentil Curry with Crispy Sesame Chickpeas" />
@@ -288,7 +337,7 @@
                 </div>
             </div>
         </div>
-        <div class="flip-box">
+        <div class="flip-box mix appetizer">
             <div class="flip-box-inner" id="d22">
                 <div class="flip-box-front">
                     <img src="images/IMG_1458.jpeg" alt="Photo of homemade Sashimi with Ponzu Sauce" />
@@ -300,7 +349,7 @@
                 </div>
             </div>
         </div>
-        <div class="flip-box">
+        <div class="flip-box mix side">
             <div class="flip-box-inner" id="d23">
                 <div class="flip-box-front">
                     <img src="images/IMG_1459.jpeg" alt="Photo of homemade Turmeric and Coconut-Braised Cabbage With Chickpeas" />
@@ -312,7 +361,7 @@
                 </div>
             </div>
         </div>
-        <div class="flip-box">
+        <div class="flip-box mix appetizer">
             <div class="flip-box-inner" id="d24">
                 <div class="flip-box-front">
                     <img src="images/IMG_1462.jpeg" alt="Photo of homemade Pastry Wrapped Baked Brie with Thyme Butter Roasted Plums" />
@@ -324,7 +373,7 @@
                 </div>
             </div>
         </div>
-        <div class="flip-box">
+        <div class="flip-box mix main">
             <div class="flip-box-inner" id="d25">
                 <div class="flip-box-front">
                     <img src="images/IMG_1464.jpeg" alt="Photo of homemade Crispy Rice Bowl with Browned Butter Sweet Potatoes and Herby Green Tahini" />
@@ -336,7 +385,7 @@
                 </div>
             </div>
         </div>
-        <div class="flip-box">
+        <div class="flip-box mix main">
             <div class="flip-box-inner" id="d26">
                 <div class="flip-box-front">
                     <img src="images/IMG_1465.jpeg" alt="Photo of homemade Shakshuka With Mushrooms" />
@@ -348,7 +397,7 @@
                 </div>
             </div>
         </div>
-        <div class="flip-box">
+        <div class="flip-box mix appetizer">
             <div class="flip-box-inner" id="d27">
                 <div class="flip-box-front">
                     <img src="images/IMG_1467.jpeg" alt="Photo of homemade 2021 New Years Charcuterie Board" />
@@ -360,7 +409,7 @@
                 </div>
             </div>
         </div>
-        <div class="flip-box">
+        <div class="flip-box mix main">
             <div class="flip-box-inner" id="d28">
                 <div class="flip-box-front">
                     <img src="images/IMG_1468.jpeg" alt="Photo of homemade Shakshuka With Feta" />
@@ -372,7 +421,7 @@
                 </div>
             </div>
         </div>
-        <div class="flip-box">
+        <div class="flip-box mix main">
             <div class="flip-box-inner" id="d29">
                 <div class="flip-box-front">
                     <img src="images/IMG_1469.jpeg" alt="Photo of homemade Poached Egg and Avocado Toast" />
@@ -384,7 +433,7 @@
                 </div>
             </div>
         </div>
-        <div class="flip-box">
+        <div class="flip-box mix main">
             <div class="flip-box-inner" id="d30">
                 <div class="flip-box-front">
                     <img src="images/IMG_1470.jpeg" alt="Photo of homemade Spiced Chickpea And Veggie Rice Bowl With Avocado Dressing" />
@@ -396,7 +445,7 @@
                 </div>
             </div>
         </div>
-        <div class="flip-box">
+        <div class="flip-box mix appetizer">
             <div class="flip-box-inner" id="d31">
                 <div class="flip-box-front">
                     <img src="images/IMG_1471.jpeg" alt="Photo of homemade Tomato, Peach, and Burrata Salad" />
@@ -408,7 +457,7 @@
                 </div>
             </div>
         </div>
-        <div class="flip-box">
+        <div class="flip-box mix dessert">
             <div class="flip-box-inner" id="d32">
                 <div class="flip-box-front">
                     <img src="images/IMG_1472.jpeg" alt="Photo of homemade Harvest Apple Challah" />
@@ -420,10 +469,10 @@
                 </div>
             </div>
         </div>
-        <div class="flip-box">
+        <div class="flip-box mix main">
             <div class="flip-box-inner" id="d33">
                 <div class="flip-box-front">
-                    <img src="images/IMG_1474.jpeg" alt="Photo of homemade oasted Tomato Caprese Pasta" />
+                    <img src="images/IMG_1474.jpeg" alt="Photo of homemade Roasted Tomato Caprese Pasta" />
                 </div>
                 <div class="flip-box-back">
                     <h2>Roasted Tomato Caprese Pasta</h2>
@@ -432,7 +481,7 @@
                 </div>
             </div>
         </div>
-        <div class="flip-box">
+        <div class="flip-box mix main">
             <div class="flip-box-inner" id="d34">
                 <div class="flip-box-front">
                     <img src="images/IMG_1475.jpeg" alt="Photo of homemade Homemade Tomato Sauce" />
@@ -444,7 +493,7 @@
                 </div>
             </div>
         </div>
-        <div class="flip-box">
+        <div class="flip-box mix main">
             <div class="flip-box-inner" id="d35">
                 <div class="flip-box-front">
                     <img src="images/IMG_1476.jpeg" alt="Photo of homemade Simple Shakshuka" />
@@ -456,7 +505,7 @@
                 </div>
             </div>
         </div>
-        <div class="flip-box">
+        <div class="flip-box mix main">
             <div class="flip-box-inner" id="d36">
                 <div class="flip-box-front">
                     <img src="images/IMG_1477.jpeg" alt="Photo of homemade Bread Machine Bagels" />
@@ -468,7 +517,7 @@
                 </div>
             </div>
         </div>
-        <div class="flip-box">
+        <div class="flip-box mix main">
             <div class="flip-box-inner" id="d37">
                 <div class="flip-box-front">
                     <img src="images/salmon_dinner.JPG" alt="Photo of homemade Brown Sugar Glazed Salmon" />
@@ -480,7 +529,7 @@
                 </div>
             </div>
         </div>
-        <div class="flip-box">
+        <div class="flip-box mix main">
             <div class="flip-box-inner" id="d38">
                 <div class="flip-box-front">
                     <img src="images/salmon.jpeg" alt="Photo of homemade Honey Fig Roasted Salmon" />
