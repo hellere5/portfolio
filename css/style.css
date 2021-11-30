@@ -313,6 +313,25 @@ input[type=submit]:hover {
     margin-bottom: 15px;
   }
 
+  .controls{
+    padding-top: 8px;
+    margin-left: 15px;
+  }
+
+  button{
+    display: inline-block;
+    padding: 6px 12px;
+    background: #f7c2c2;
+    font-size: 18px;
+    font-weight: 300;
+    border-radius: 4px;
+    border-color: #000000;
+  }
+
+  button.active{
+    background: #f5758a;
+  }
+
 }
 
 @media screen and (min-width: 1400px){
@@ -492,25 +511,6 @@ input[type=submit]:hover {
     grid-column: 2;
     grid-row: 7;
     margin: 5px;
-  }
-
-  .controls{
-    padding-top: 8px;
-    margin-left: 15px;
-  }
-
-  button{
-    display: inline-block;
-    padding: 6px 12px;
-    background: #f7c2c2;
-    font-size: 18px;
-    font-weight: 300;
-    border-radius: 4px;
-    border-color: #000000;
-  }
-
-  button.active{
-    background: #f5758a;
   }
 
 
