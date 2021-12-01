@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&family=Archivo+Narrow&family=Open+Sans&display=swap" rel="stylesheet">
-    <script src="navjava.js"></script>
+    <script src="mixitup.js"></script>
     <title>Recipes</title>
   </head>
   <body>
@@ -50,36 +50,14 @@
         </ul>
       </nav>
       <div class="controls">
-        <button type="button" class="control" data-filter="all">All</button>
-        <button type="button" class="control" data-filter=".breakfast">Breakfast</button>
-        <button type="button" class="control" data-filter=".appetizer">Appetizers</button>
-        <button type="button" class="control" data-filter=".main">Main Courses</button>
-        <button type="button" class="control" data-filter=".vegetarian">Vegetarian Options</button>
-        <button type="button" class="control" data-filter=".side">Side Dishes</button>
-        <button type="button" class="control" data-filter=".dessert">Dessert</button>
-        <button type="button" class="control" data-filter="none">None</button>
+        <button type="button" id="mix0" class="control" data-filter="all">All </button>
+        <button type="button" id="mix1" class="control" data-filter=".breakfast">Breakfast</button>
+        <button type="button" id="mix2" class="control" data-filter=".appetizer">Appetizers</button>
+        <button type="button" id="mix3" class="control" data-filter=".main">Mains</button>
+        <button type="button" id="mix4" class="control" data-filter=".vegetarian">Vegetarian</button>
+        <button type="button" id="mix5" class="control" data-filter=".side">Sides</button>
+        <button type="button" id="mix6" class="control" data-filter=".dessert">Dessert</button>
     </div>
-    <div class="container">
-        <div class="mix vegetarian"></div>
-        <div class="mix vegetarian"></div>
-        <div class="mix vegetarian"></div>
-        <div class="mix pink"></div>
-        <div class="mix green"></div>
-        <div class="mix blue"></div>
-        <div class="mix pink"></div>
-        <div class="mix blue"></div>
-
-        <div class="gap"></div>
-        <div class="gap"></div>
-        <div class="gap"></div>
-    </div>
-    <script src="navjava.js"></script>
-
-        <script>
-            var containerEl = document.querySelector('.container');
-
-            var mixer = mixitup(containerEl);
-        </script>
       <h1>Recipes</h1>
   </header>
   <main id = "main">
@@ -301,7 +279,7 @@
                 </div>
             </div>
         </div>
-        <div class="flip-box mis main">
+        <div class="flip-box mix main">
             <div class="flip-box-inner" id="d19">
                 <div class="flip-box-front">
                     <img src="images/IMG_1455.jpeg" alt="Photo of homemade Cedar Plank Salmon with Watermelon Feta Salsa" />
@@ -541,6 +519,7 @@
                 </div>
             </div>
         </div>
+        
     </div>
   </main>
   <footer>

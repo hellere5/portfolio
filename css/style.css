@@ -4,7 +4,7 @@ body{
   font-size:150%;
   background-image: url("../images/black_and_white.jpg");
   /* font-family: -apple-system, sans-serif; */
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, serif;
 }
 
 h1{
@@ -70,6 +70,10 @@ p{
 .item1{
   /* grid-row: 1/5; */
   text-align: center;
+}
+
+.controls{
+  display:none;
 }
 
 footer{
@@ -256,7 +260,6 @@ input[type=submit]:hover {
   transform: translateY(4px);
 }
 
-
 @-webkit-keyframes grow{
   from {width: 50px; opacity: 0;}
   to {width: 300px; opacity: 1;}
@@ -314,18 +317,33 @@ input[type=submit]:hover {
   }
 
   .controls{
-    padding-top: 8px;
-    margin-left: 15px;
+    padding-top: 6px;
+    display: flex;
+    /* flex-direction: column;
+    flex-wrap: wrap; */
+    height: 20px;
+    padding-bottom: 40px;
+    justify-content: space-evenly;
   }
 
   button{
     display: inline-block;
-    padding: 6px 12px;
+    padding: 5px 8px 28px 8px;
     background: #f7c2c2;
     font-size: 18px;
     font-weight: 300;
     border-radius: 4px;
+    /* padding-bottom: 30px; */
     border-color: #000000;
+    font-family: Georgia, serif;
+  }
+
+  .showMix{
+    display: block;
+  }
+
+  .hideMix{
+    display: none;
   }
 
   button.active{
@@ -336,8 +354,12 @@ input[type=submit]:hover {
 
 @media screen and (min-width: 1400px){
 
+  .controls{
+    padding-bottom: 30px;
+  }
+
   p.test{
-    padding-top: 50px;
+    padding-top: 45px;
   }
 
   .Ellie{
