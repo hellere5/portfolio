@@ -1,6 +1,6 @@
 body{
-	margin:10px;
-	padding:30px;
+	/* margin:10px;
+	padding:30px; */
   font-size:150%;
   background-image: url("../images/black_and_white.jpg");
   /* font-family: -apple-system, sans-serif; */
@@ -16,6 +16,7 @@ h1{
 
 .nav_links {
   background-color: #f7c2c2;
+
   border: 2px solid #000000;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -24,6 +25,20 @@ h1{
   justify-content: space-evenly;
   text-align: center;
   justify-items: center;
+}
+
+p{
+  margin:10px;
+	padding:30px;
+}
+
+nav{
+  margin-top:10px;
+  margin-left:10px;
+  margin-right:10px;
+  padding-top:30px;
+  padding-left:30px;
+  padding-right:30px;
 }
 
 .nav_links a:hover{
@@ -50,7 +65,7 @@ p{
   padding-top: 10px;
   padding-bottom: 50px;
   text-align: center;
-  line-height: 1.2;
+  line-height: 1.4;
 }
 
 .container{
@@ -76,6 +91,10 @@ p{
   display:none;
 }
 
+main{
+  min-height: 80vh;
+}
+
 footer{
   padding-top: 30px;
   margin-top: 20px;
@@ -87,9 +106,11 @@ footer{
 .item img{
   height: auto;
   width: 300px;
-  border: 2px solid #000000;
+  border: 3px solid #000000;
   padding: 10px;
   border-radius: 10px;
+  padding: 5px;
+  
   /* margin: auto;
   display: block; */
 }
@@ -101,7 +122,7 @@ footer{
 .flip-box-front img{
   /* height: 400px; */
   width: auto;
-  border: 2px solid #000000;
+  border: 3px solid #000000;
   padding: 10px;
   border-radius: 10px;
   margin: auto;
@@ -111,7 +132,7 @@ footer{
 img{
   height: 400px;
   width: auto;
-  border: 2px solid #000000;
+  border: 3px solid #000000;
   padding: 10px;
   border-radius: 10px;
   margin: 10px;
@@ -145,7 +166,7 @@ a:visited{
   background-color: transparent;
   width: auto;
   /* height: 400px; */
-  margin: auto;
+  /* margin: auto; */
   display: block;
 }
 
@@ -222,6 +243,7 @@ input {
 }
 span{
   padding-left: 5px;
+  font-size: 20px;
 }
 
 textarea{
@@ -270,10 +292,6 @@ input[type=submit]:hover {
   to {width: 300px; opacity: 1;}
 }
 
-#noMove img{
-  animation:none;
-}
-
 .item img{
   animation-name: grow;
   animation-duration: 4s;
@@ -281,6 +299,52 @@ input[type=submit]:hover {
 }
 
 @media screen and (min-width: 768px){
+
+  .flip-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+  }
+
+  .flip-container > div:not(:first-child) p {
+    position: relative;
+  }
+
+  .flip-box img{
+    height: auto;
+    width: 350px;
+    border: 3px solid #000000;
+    padding: 10px;
+    border-radius: 10px;
+    justify-items: center;
+  }
+
+  .flip-box-back{
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .flip-container p{
+    font-size: 18px;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+  }
+
+  .flip-container h2{
+    font-size: 28px;
+    padding-top: 10px;
+    font-weight: bolder;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .flip-container a{
+    font-size: 14px;
+    width: 80%;
+  }
+
   .nav_links {
     flex-direction: row;
   }
@@ -299,13 +363,24 @@ input[type=submit]:hover {
   }
 
   .item1 p{
-    padding-bottom: 40px;
+    padding-bottom: 20px;
     text-align: center;
   }
 
-  .item img{
-    float: left;
-    margin-right: 15px;
+  .contain{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 10px
+  }
+
+  .contain img{
+    padding-right: 5px;
+  }
+
+  .contain p{
+    align-self: center;
+    padding-left: 10px;
+    font-size: 22px;
   }
 
   .container > div:not(:first-child) p {
@@ -359,7 +434,10 @@ input[type=submit]:hover {
   }
 
   p.test{
-    padding-top: 45px;
+    /* padding-top: 45px;
+    padding-bottom: 50px; */
+    margin-top:120px;
+    margin-bottom: 10px;;
   }
 
   .Ellie{
@@ -371,6 +449,14 @@ input[type=submit]:hover {
     display: table;
     margin: 0 auto;
     margin-top: 175px;
+  }
+
+  .flip-box img{
+    height: auto;
+    width: 500px;
+    border: 3px solid #000000;
+    padding: 10px;
+    border-radius: 10px;
   }
   
   .flip-container{
@@ -402,6 +488,11 @@ input[type=submit]:hover {
     width: 400px;
     height: 400px;
     backface-visibility: hidden;
+  }
+
+  .flip-box{
+    width: fit-content;
+    padding:5px;
   }
   
   .flip-box-back h2{
@@ -441,12 +532,16 @@ input[type=submit]:hover {
     height: 500px; 
     background-image: url("../images/smoothie.jpeg");
     background-repeat: no-repeat;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
   }
 
   header.noParallax {
     background-image: none;
     height: 80px; 
+  }
+
+  .contain{
+    display: initial;
   }
 
   .container{
@@ -457,85 +552,30 @@ input[type=submit]:hover {
     font-size: 21px;
   }
 
+  .space{
+    padding-top:50px;
+  }
+
   .item1{
     grid-template-columns: 1fr;
     grid-column: 1/-1;
     grid-row: 1;
   }
 
-  .item2 img{
-    grid-column: 1;
-    grid-row: 2;
-    margin: 5px;
+  .contain p{
+    padding-top: 15px;
+    padding-bottom: 50px;
+    width: 95%;
+    text-align: center;
   }
 
-  .item2 p{
-    grid-column: 1;
-    grid-row: 3;
-    margin: 5px;
+  nav.forms{
+    margin-bottom: 40px;
   }
 
-  .item3 img{
-    grid-column: 2;
-    grid-row: 2;
-    margin: 5px;
+  form{
+    padding-top: 95px;
   }
-
-  .item3 p{
-    grid-column: 2;
-    grid-row: 3;
-    margin: 5px;
-  }
-
-  .item4 img{
-    grid-column: 1;
-    grid-row: 4;
-    margin: 5px;
-  }
-
-  .item4 p{
-    grid-column: 1;
-    grid-row: 5;
-    margin: 5px;
-  }
-
-  .item5 img{
-    grid-column: 2;
-    grid-row: 4;
-    margin: 5px;
-  }
-
-  .item5 p{
-    grid-column: 2;
-    grid-row: 5;
-    margin: 5px;
-  }
-
-  .item6 img{
-    grid-column: 1;
-    grid-row: 6;
-    margin: 5px;
-  }
-
-  .item6 p{
-    grid-column: 1;
-    grid-row: 7;
-    margin: 5px;
-  }
-
-  .item7 img{
-    grid-column: 2;
-    grid-row: 6;
-    margin: 5px;
-  }
-
-  .item7 p{
-    grid-column: 2;
-    grid-row: 7;
-    margin: 5px;
-  }
-
-
 }
 
 @media screen and (prefers-reduced-motion: reduce){
